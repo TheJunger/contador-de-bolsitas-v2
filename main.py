@@ -17,7 +17,7 @@ def register():
     username = request.json['username']
     password = request.json['password']
     hashed_password = generate_password_hash(password)
-    conn = sqlite3.connect('/home/TheJunger/mysite/database.db.db')
+    conn = sqlite3.connect('/home/TheJunger/mysite/database.db')
     cursor = conn.cursor()
     cursor.execute('INSERT INTO users (username, password) VALUES (?, ?)', (username, hashed_password))
     conn.commit()
@@ -30,7 +30,7 @@ def login():
     username = request.json['username']
     password = request.json['password']
 
-    conn = sqlite3.connect('/home/TheJunger/mysite/database.db.db')
+    conn = sqlite3.connect('/home/TheJunger/mysite/database.db')
     cursor = conn.cursor()
     cursor.execute('SELECT password FROM users WHERE username = ?', (username,))
     user = cursor.fetchone()
@@ -48,7 +48,7 @@ def login():
 @app.route("/api/get-data-bolsitas", methods=["GET"])
 @jwt_required()
 def get_data_bolsitas():
-    conn = sqlite3.connect('/home/TheJunger/mysite/database.db.db')
+    conn = sqlite3.connect('/home/TheJunger/mysite/database.db')
     cursor = conn.cursor()
     cursor.execute(f'SELECT * FROM bolsitas')
     data = cursor.fetchall()
@@ -60,7 +60,7 @@ def get_data_bolsitas():
 @app.route("/api/get-data-bolsones", methods=["GET"])
 @jwt_required()
 def get_data_bolsones():
-    conn = sqlite3.connect('/home/TheJunger/mysite/database.db.db')
+    conn = sqlite3.connect('/home/TheJunger/mysite/database.db')
     cursor = conn.cursor()
     cursor.execute(f'SELECT * FROM bolsones_deposito')
     data = cursor.fetchall()
@@ -72,7 +72,7 @@ def get_data_bolsones():
 @app.route("/api/get-data-bolsas", methods=["GET"])
 @jwt_required()
 def get_data_bolsas():
-    conn = sqlite3.connect('/home/TheJunger/mysite/database.db.db')
+    conn = sqlite3.connect('/home/TheJunger/mysite/database.db')
     cursor = conn.cursor()
     cursor.execute(f'SELECT * FROM bolsas_harina')
     data = cursor.fetchall()
@@ -87,7 +87,7 @@ def get_data_bolsas():
 @jwt_required()
 def get_specific_data_bolsitas():
     id = request.json["bolsitaid"]
-    conn = sqlite3.connect('/home/TheJunger/mysite/database.db.db')
+    conn = sqlite3.connect('/home/TheJunger/mysite/database.db')
     cursor = conn.cursor()
     cursor.execute(f'SELECT * FROM bolsitas WHERE id_bolsita = ?', (id,))
     data = cursor.fetchall()
@@ -100,7 +100,7 @@ def get_specific_data_bolsitas():
 @jwt_required()
 def get_specific_data_bolsones():
     id = request.json["bolsonId"]
-    conn = sqlite3.connect('/home/TheJunger/mysite/database.db.db')
+    conn = sqlite3.connect('/home/TheJunger/mysite/database.db')
     cursor = conn.cursor()
     cursor.execute(f'SELECT * FROM bolsones_deposito WHERE id_dbolsones = ?', (id,))
     data = cursor.fetchall()
@@ -113,7 +113,7 @@ def get_specific_data_bolsones():
 @jwt_required()
 def get_specific_data_bolsas():
     id = request.json["harinaid"]
-    conn = sqlite3.connect('/home/TheJunger/mysite/database.db.db')
+    conn = sqlite3.connect('/home/TheJunger/mysite/database.db')
     cursor = conn.cursor()
     cursor.execute(f'SELECT * FROM bolsas_harina WHERE id_harina = ?', (id,))
     data = cursor.fetchall()
@@ -133,7 +133,7 @@ def save_data_bolsitas():
     print(nuevo_valor_selladas)
     print(nuevo_valor_sin_sellar)
 
-    conn = sqlite3.connect("/home/TheJunger/mysite/database.db.db")
+    conn = sqlite3.connect("/home/TheJunger/mysite/database.db")
     cursor = conn.cursor()
     
     cursor.execute(f'UPDATE bolsitas SET selladas = ?, sin_sellar = ? WHERE id_bolsita = ?', 
@@ -152,7 +152,7 @@ def save_data_bolsas():
     nuevo_valor_usadas = request.json["nuevoValorUsadas"]
     nuevo_valor_restantes = request.json["nuevoValorRestanes"]
 
-    conn = sqlite3.connect("/home/TheJunger/mysite/database.db.db")
+    conn = sqlite3.connect("/home/TheJunger/mysite/database.db")
     cursor = conn.cursor()
     
     cursor.execute(f'UPDATE bolsas_harina SET total = ?, usadas = ?, restantes = ? WHERE id_harina = ?', 
@@ -169,7 +169,7 @@ def save_data_bolsones():
     nuevo_valor_total = request.json["nuevoValorTotal"]
     nuevo_valor_remanentes = request.json["nuevoValorRemanentes"]
 
-    conn = sqlite3.connect("/home/TheJunger/mysite/database.db.db")
+    conn = sqlite3.connect("/home/TheJunger/mysite/database.db")
     cursor = conn.cursor()
     
     cursor.execute(f'UPDATE bolsones_deposito SET cantidad = ?, remanentes = ? WHERE id_dbolsones = ?', 
