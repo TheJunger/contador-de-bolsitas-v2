@@ -6,7 +6,7 @@ const OpenLabel = ({ setShowLabelEdit, bolsitaid, tipoBolsita, fetchData, token 
   const [sinSellar, setSinSellar] = useState(0);
 
   useEffect(() => {
-    fetch(`http://192.168.100.9:5050/api/get-specific-data-bolsitas`, {
+    fetch(`https://thejunger.pythonanywhere.com/api/get-specific-data-bolsitas`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -27,7 +27,7 @@ const OpenLabel = ({ setShowLabelEdit, bolsitaid, tipoBolsita, fetchData, token 
   const handleSave = async (e) => {
     e.preventDefault();
 
-    const response = await fetch('http://192.168.100.9:5050/api/save-data-bolsitas', {
+    const response = await fetch('https://thejunger.pythonanywhere.com/api/save-data-bolsitas', {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

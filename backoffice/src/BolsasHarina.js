@@ -13,7 +13,7 @@ const BolsasHarina = ({token}) =>{
 
     const fetchData = async () => {
         try {
-          const response = await fetch('http://192.168.100.9:5050/api/get-data-bolsas', {
+          const response = await fetch('https://thejunger.pythonanywhere.com/api/get-data-bolsas', {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${token}`,

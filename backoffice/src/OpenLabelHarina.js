@@ -15,7 +15,7 @@ const OpenLabelHarina = ({
   const [restantes, setRestantes] = useState(0);
 
   useEffect(() => {
-    fetch(`http://192.168.100.9:5050/api/get-specific-data-bolsas`, {
+    fetch(`https://thejunger.pythonanywhere.com/api/get-specific-data-bolsas`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ const OpenLabelHarina = ({
 
   const handleSave = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://192.168.100.9:5050/api/save-data-bolsas", {
+    const response = await fetch("https://thejunger.pythonanywhere.com/api/save-data-bolsas", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

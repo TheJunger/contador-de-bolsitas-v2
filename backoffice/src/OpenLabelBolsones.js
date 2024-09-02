@@ -9,7 +9,7 @@ const OpenLabelBolsones = ({setShowLabelBolsones, bolsonId, tipoCambio, fetchDat
     const [remanentes, setRemanentes] = useState(0);
 
     useEffect(() => {
-        fetch(`http://192.168.100.9:5050/api/get-specific-data-bolsones`, {
+        fetch(`https://thejunger.pythonanywhere.com/api/get-specific-data-bolsones`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -30,7 +30,7 @@ const OpenLabelBolsones = ({setShowLabelBolsones, bolsonId, tipoCambio, fetchDat
     const handleSaveBolsones = async (e) =>{
         e.preventDefault();
     
-        const response = await fetch("http://192.168.100.9:5050/api/save-data-bolsones", {
+        const response = await fetch("https://thejunger.pythonanywhere.com/api/save-data-bolsones", {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

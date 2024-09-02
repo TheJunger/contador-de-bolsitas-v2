@@ -11,7 +11,7 @@ function Bolsitas({token}) {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://192.168.100.9:5050/api/get-data-bolsitas', {
+      const response = await fetch('https://thejunger.pythonanywhere.com/api/get-data-bolsitas', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,

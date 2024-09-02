@@ -13,7 +13,7 @@ const BolsonesDeposito = ({token})=>{
 
     const fetchData = async () =>{
         try{
-            const response = await fetch('http://192.168.100.9:5050/api/get-data-bolsones', {
+            const response = await fetch('https://thejunger.pythonanywhere.com/api/get-data-bolsones', {
                 method: "GET",
                 headers:{
                     'Authorization': `Bearer ${token}`,
