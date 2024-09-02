@@ -1,0 +1,89 @@
+.bolsasHarinaContainer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1px;
+    background-color: #fff;
+    font-size: 2.7vh;
+    font-weight: 500;
+    user-select: none;
+    margin-top: 20vh;
+}
+
+.BHC{
+    border: 1px solid #222;
+    padding: 1vh;
+    text-align: center;
+}
+
+.bolsasvazquez, .bolsascontainervazquez {
+    background-color: rgba(255, 187, 60, 0.7);
+}
+
+.bolsasosvaldo, .bolsascontainerosvaldo{
+    background-color: salmon;
+}
+
+.bolsascontainertitle, .bolsascontainertotal, .bolsascontainerusadas, .bolsascontainerrestantes{
+    background-color: rgb(95, 158, 160, 0.5);
+}
+
+.bolsascontainertitle{
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+}
+
+.bolsascontainertotal{
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+}
+
+.bolsascontainerusadas{
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 1;
+}
+
+.bolsascontainerrestantes{
+    grid-column: 4 / span 1;
+    grid-row: 1 / span 1;
+}
+
+.bolsascontainervazquez{
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.bolsascontainerosvaldo{
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+}
+
+.bolsasTotalosvaldo{
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+}
+
+.bolsasTotalvazquez{
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.bolsasUsadasosvaldo{
+    grid-column: 3 / span 1;
+    grid-row: 3 / span 1;
+}
+
+.bolsasUsadasvazquez{
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.bolsasRestantesosvaldo{
+    grid-column: 4 / span 1;
+    grid-row: 3 / span 1;
+}
+
+.bolsasRestantesvazquez{
+    grid-column: 4 / span 1;
+    grid-row: 2 / span 1;
+}

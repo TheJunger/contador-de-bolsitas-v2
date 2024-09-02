@@ -1,0 +1,186 @@
+.navbarcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.navbarup{
+    width: 98vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    height: 2vh;
+    padding: 3vh 2vh;
+    border-bottom: 2px solid #222;
+    user-select: none;
+}
+
+.navbarupdiv{
+    padding: 1vh 2vh;
+    width: 120px;
+    text-align: center;
+}
+
+.navbarupLogout{
+    border: 1px solid #222;
+    padding: 1vh 2vh;
+    border-radius: 1vh;
+    background-color: rgb(255, 177, 177);
+    font-weight: 600;
+    transition: background-color 0.1s;
+    cursor: pointer;
+}
+
+.navbarupLogout:hover{
+    background-color: rgb(194, 117, 117);
+
+}
+
+.navbardown{
+    display: flex;
+    justify-content: space-evenly;
+    width: 98vw;
+    background-color: #fff;
+    padding: 1vh 2vh;
+    text-align: center;
+}
+
+.navbardowndiv{
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 1vh 2vh;
+    border-bottom: 1px solid #222;
+    text-align: center;
+    transition: transform 0.2s;
+    user-select: none;
+    cursor: pointer;
+}
+
+.navbardowndiv:hover{
+    transform: scale(1.3);
+}
+
+.active{
+    transform: scale(1.3);
+}
+
+/*---*/
+
+.navbardownHistorial{
+    display: none;
+}
+
+.navbardownInventario{
+    display: none;
+}
+
+.navbarupMenu{
+    display: none;
+}
+
+.navbardownmobile{
+    display: none;
+}
+
+@media (max-width: 680px){
+
+    .navbardown{
+        padding: 1vh;
+    }
+    .navbardowndiv{
+        width: 100px;
+        padding: 1vh;
+    }
+}
+
+@media (max-width: 500px){
+
+
+    .navbardowndiv{
+        width: 80px;
+        font-size: medium;
+        padding: 1vh 0;
+    }
+}
+
+@media (max-width: 395px){
+
+    .navbarup{
+        padding: 0;
+        padding: 4vh 0;
+        font-weight: 600;
+        width: 100vw;
+    }
+
+    .navbardown{
+        display: none;
+    }
+
+    .navbarupMenu{
+        display: block;
+    }
+
+    .navbarupLogout{
+        display: none;
+    }
+
+    .fondoDifuminadoMobile{
+        background-color: rgb(34, 34, 34, 0.8);
+        width: 99vw;
+        height: 100vh;
+        position: fixed;
+        z-index: 0;
+    }
+
+    .navbardownmobile{
+        display: block;
+        position: absolute;
+        transition: all 0.4s;
+        display: flex;
+        flex-direction: column;
+        font-weight: 600;
+    }
+
+    .show{
+        top: 0px;
+    }
+    .nonshow{
+        top: -1000px;
+    }
+
+    .navbardowndivMobile{
+        border-bottom: 1px solid #222;
+        width: 99vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2vh 0;
+        z-index: 20;
+        background-color: #fff;
+    }
+
+    .navbarupLogoutMobile{
+        background-color: rgb(255, 177, 177);
+    }
+
+    .navbardowndiv:hover{
+        transform: none;
+    }
+    
+    .active{
+        transform: none;
+    }
+    
+    .navbardownHistorialMobile{
+        display: none;
+    }
+    
+    .navbardownInventarioMobile{
+        display: none;
+    }
+
+}

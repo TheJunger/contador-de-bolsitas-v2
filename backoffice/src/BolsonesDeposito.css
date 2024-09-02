@@ -1,0 +1,371 @@
+.gridBolsitasContainer{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap: 1px;
+    background-color: #fff;
+    font-size: 2.7vh;
+    font-weight: 500;
+    user-select: none;
+    margin-top: 15vh;
+    text-align: center;
+    border: 1px solid #222;
+}
+
+.gBCTitle{
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gBCOsvaldo{
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 1;
+
+}
+
+.gBCVazquez{
+    grid-column: 4 / span 2;
+    grid-row: 1 / span 1;
+}
+
+.gBCUpTable{
+    border: 1px solid #222;
+    overflow: hidden;
+    background-color: rgb(95, 158, 160, 0.5);
+}
+
+.bolsonestallarin, .bolsonescinta_ancha{
+    background-color: rgb(245, 222, 179, 0.7);
+}
+
+.bolsonescinta, .bolsonespappardelle{
+    background-color: rgb(241, 208, 145);
+}
+
+.bolsonescinta_verde{
+    background-color: rgb(174, 216, 112, 0.5);
+}
+
+.bolsonescinta_ancha_verde{
+    background-color: rgb(174, 216, 112);
+}
+
+.bolsonescinta_roja, .bolsonescinta_morron{
+    background-color: rgba(245, 158, 124, 0.5);
+}
+
+.bolsonescinta_ancha_roja, .bolsonescinta_ancha_morron{
+    background-color: rgb(250, 163, 128);
+}
+
+.gBCleftTable{
+    text-align: left;
+    border: 1px solid #222;
+    overflow: hidden;
+}
+
+.bolsones{
+    border: 1px solid #222;
+}
+
+/*-----*/
+
+.gBCORemanentes{
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.gBCOTotal{
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.gBCVRemantentes{
+    grid-column: 5 / span 1;
+    grid-row: 2 / span 1;
+}
+
+
+/*-----*/
+
+
+.gBCVTotal{
+    grid-column: 4 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.gBCTallarin{
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+    background-color: rgb(245, 222, 179, 0.7);
+}
+
+.gBCCinta{
+    grid-column: 1 / span 1;
+    grid-row: 4 / span 1;
+    background-color: rgb(241, 208, 145);
+}
+
+.gBCAncha{
+    grid-column: 1 / span 1;
+    grid-row: 5 / span 1;
+    background-color: rgb(245, 222, 179, 0.7);
+}
+
+.gBCPappardelle{
+    grid-column: 1 / span 1;
+    grid-row: 6 / span 1;
+    background-color: rgb(241, 208, 145);
+}
+
+.gBCCintaVerde{
+    grid-column: 1 / span 1;
+    grid-row: 7 / span 1;
+    background-color: rgb(174, 216, 112, 0.5);
+}
+
+.gBCAnchaVerde{
+    grid-column: 1 / span 1;
+    grid-row: 8 / span 1;
+    background-color: rgb(174, 216, 112);
+}
+
+.gBCCintaRoja{
+    grid-column: 1 / span 1;
+    grid-row: 9 / span 1;
+    background-color: rgba(245, 158, 124, 0.5);
+}
+
+.gBCAnchaRoja{
+    grid-column: 1 / span 1;
+    grid-row: 10 / span 1;
+    background-color: rgb(250, 163, 128);
+}
+
+
+
+.bolsonCantidadtallarinosvaldo{
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+}
+
+.bolsonRemanentestallarinosvaldo{
+    grid-column: 3 / span 1;
+    grid-row: 3 / span 1;
+}
+
+
+
+.bolsonCantidadcintaosvaldo{
+    grid-column: 2 / span 1;
+    grid-row: 4 / span 1;
+}
+
+.bolsonRemanentescintaosvaldo{
+    grid-column: 3 / span 1;
+    grid-row: 4 / span 1;
+}
+
+
+
+.bolsonCantidadcinta_anchaosvaldo{
+    grid-column: 2 / span 1;
+    grid-row: 5 / span 1;
+}
+
+.bolsonRemanentescinta_anchaosvaldo{
+    grid-column: 3 / span 1;
+    grid-row: 5/ span 1;
+}
+
+
+
+.bolsonCantidadpappardelleosvaldo{
+    grid-column: 2 / span 1;
+    grid-row: 6 / span 1;
+}
+
+.bolsonRemanentespappardelleosvaldo{
+    grid-column: 3 / span 1;
+    grid-row: 6 / span 1;
+}
+
+
+
+.bolsonCantidadcinta_verdeosvaldo{
+    grid-column: 2 / span 1;
+    grid-row: 7 / span 1;
+}
+
+.bolsonRemanentescinta_verdeosvaldo{
+    grid-column: 3 / span 1;
+    grid-row: 7 / span 1;
+}
+
+
+
+.bolsonCantidadcinta_ancha_verdeosvaldo{
+    grid-column: 2 / span 1;
+    grid-row: 8 / span 1;
+}
+
+.bolsonRemanentescinta_ancha_verdeosvaldo{
+    grid-column: 3 / span 1;
+    grid-row: 8 / span 1;
+}
+
+
+
+.bolsonCantidadcinta_rojaosvaldo{
+    grid-column: 2 / span 1;
+    grid-row: 9 / span 1;
+}
+
+.bolsonRemanentescinta_rojaosvaldo{
+    grid-column: 3 / span 1;
+    grid-row: 9 / span 1;
+}
+
+
+
+.bolsonCantidadcinta_ancha_rojaosvaldo{
+    grid-column: 2 / span 1;
+    grid-row: 10 / span 1;
+}
+
+.bolsonRemanentescinta_ancha_rojaosvaldo{
+    grid-column: 3 / span 1;
+    grid-row: 10 / span 1;
+}
+
+/*---*/
+
+.bolsonCantidadtallarinovazquez{
+    grid-column: 4 / span 1;
+    grid-row: 3 / span 1;
+}
+
+.bolsonRemanentestallarinovazquez{
+    grid-column: 5 / span 1;
+    grid-row: 3 / span 1;
+}
+
+
+
+.bolsonCantidadcintavazquez{
+    grid-column: 4 / span 1;
+    grid-row: 4 / span 1;
+}
+
+.bolsonRemanentescintavazquez{
+    grid-column: 5 / span 1;
+    grid-row: 4 / span 1;
+}
+
+
+
+.bolsonCantidadcinta_anchavazquez{
+    grid-column: 4 / span 1;
+    grid-row: 5 / span 1;
+}
+
+.bolsonRemanentescinta_anchavazquez{
+    grid-column: 5 / span 1;
+    grid-row: 5/ span 1;
+}
+
+
+
+.bolsonCantidadpappardellevazquez{
+    grid-column: 4 / span 1;
+    grid-row: 6 / span 1;
+}
+
+.bolsonRemanentespappardellevazquez{
+    grid-column: 5 / span 1;
+    grid-row: 6 / span 1;
+}
+
+
+
+.bolsonCantidadcinta_verdevazquez{
+    grid-column: 4 / span 1;
+    grid-row: 7 / span 1;
+}
+
+.bolsonRemanentescinta_verdevazquez{
+    grid-column: 5 / span 1;
+    grid-row: 7 / span 1;
+}
+
+
+
+.bolsonCantidadcinta_ancha_verdevazquez{
+    grid-column: 4 / span 1;
+    grid-row: 8 / span 1;
+}
+
+.bolsonRemanentescinta_ancha_verdevazquez{
+    grid-column: 5 / span 1;
+    grid-row: 8 / span 1;
+}
+
+
+
+.bolsonCantidadcinta_morronvazquez{
+    grid-column: 4 / span 1;
+    grid-row: 9 / span 1;
+}
+
+.bolsonRemanentescinta_morronvazquez{
+    grid-column: 5 / span 1;
+    grid-row: 9 / span 1;
+}
+
+
+
+.bolsonCantidadcinta_ancha_morronvazquez{
+    grid-column: 4 / span 1;
+    grid-row: 10 / span 1;
+}
+
+.bolsonRemanentescinta_ancha_morronvazquez{
+    grid-column: 5 / span 1;
+    grid-row: 10 / span 1;
+}
+
+@media (max-width: 480px){
+    .gridBolsitasContainer {
+        display: grid;
+        justify-content: center;
+        width: 100%;
+        grid-template-columns: repeat(5, 70px);
+        grid-template-rows: repeat(10);
+        gap: 1px;
+        margin-top: 1vh;
+    }
+
+    .gBCUpTable{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        word-break: break-all;
+    }
+
+    .gBCleftTable{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        word-break: break-word;
+    }
+
+    .bolsones{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
