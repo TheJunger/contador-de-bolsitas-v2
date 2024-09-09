@@ -6,6 +6,7 @@ import { useState } from "react";
 import "./Mainmenu.css"
 import { BolsasHarina } from "./BolsasHarina";
 import { BolsonesDeposito } from "./BolsonesDeposito";
+import { Produccion } from "./Produccion";
 
 const MainMenu = ({token}) =>{
 
@@ -14,11 +15,12 @@ const MainMenu = ({token}) =>{
     const [showBolsasHarina, setShowBolsonesHarina] = useState(false)
     const [showInventario, setShowInventario] = useState(false)
     const [showHistorial, setShowHistorial] = useState(false)
+    const [showProduccion, setShowProduccion] = useState(false)
     const [showMain, setShowMain] = useState(true)
 
     return(
         <>
-            <Navbar setShowBolsitas={setShowBolsitas} setShowBolsones={setShowBolsones} setShowBolsonesHarina={setShowBolsonesHarina} setShowMain={setShowMain} setShowInventario={setShowInventario} setShowHistorial={setShowHistorial}/>
+            <Navbar setShowBolsitas={setShowBolsitas} setShowBolsones={setShowBolsones} setShowBolsonesHarina={setShowBolsonesHarina} setShowMain={setShowMain} setShowInventario={setShowInventario} setShowHistorial={setShowHistorial} setShowProduccion={setShowProduccion}/>
             <div className="mainmenucontainer">
             {showBolsitas == true ?
             <Bolsitas token={token}/> :
@@ -28,6 +30,9 @@ const MainMenu = ({token}) =>{
             <BolsasHarina token={token}/> :
             showMain == true ?
             <Main/> :
+            showProduccion == true ?
+            <Produccion token={token}/>
+            :
             showInventario == true?
             "inventario" :
             showHistorial == true?

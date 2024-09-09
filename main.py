@@ -1,12 +1,13 @@
-from flask import Flask, request, jsonify, send_file
+from flask import Flask, request, jsonify
 import sqlite3
 from flask_cors import CORS
-from io import BytesIO
-from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime, timedelta
 
 app = Flask(__name__)
 app.config['JWT_SECRET_KEY'] = 'yametekudasai'  # Cambia esto a un valor seguro
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(hours=2)
 CORS(app, origins=["*"])
 jwt = JWTManager(app)
 
@@ -179,7 +180,102 @@ def save_data_bolsones():
     
     return jsonify(message='Data updated successfully'), 200
 
+# endpoint para crear produccion, editar produccion, eliminar produccion y otro claro, para obtener los datos, y uno para descargar todos los datos
 
+
+
+@app.route("/api/get-data-produccion", methods=["GET"])
+@jwt_required()
+def get_data_produccion():
+    conn = sqlite3.connect('/home/TheJunger/mysite/database.db')
+    cursor = conn.cursor()
+    cursor.execute(f'SELECT * FROM produccion ORDER BY fecha DESC LIMIT 10')
+    data = cursor.fetchall()
+    conn.close()
+    columns = ["ID", "Fecha", "Dueño", "Grosor", "Color", "Cantidad", "Fecha_Real"]
+    result = [dict(zip(columns,row)) for row in data]
+    return jsonify(result)
+
+@app.route("/api/get-specific-data-produccion", methods=["POST"])
+@jwt_required()
+def get_specific_data_produccion():
+    id = request.json["produccionID"]
+    conn = sqlite3.connect('/home/TheJunger/mysite/database.db')
+    cursor = conn.cursor()
+    cursor.execute(f'SELECT * FROM produccion WHERE prod_id = ?', (id,))
+    data = cursor.fetchall()
+    conn.close()
+    columns = ["ID", "Fecha", "Dueño", "Grosor", "Color", "Cantidad", "Fecha_Real"]
+    result = [dict(zip(columns,row)) for row in data]
+    return jsonify(result)
+
+@app.route("/api/add-data-produccion", methods=["PUT"])
+@jwt_required()
+def add_data_produccion():
+    fecha = request.json["fecha"]
+    dueño = request.json["dueño"]
+    grosor = request.json["grosor"]
+    color = request.json["color"]
+    cantidad = request.json["cantidad"]
+    fecha_real = datetime.now().strftime("%d/%m/%y")
+    if (grosor == "grosorUno"):
+        grosor = 1
+    elif (grosor == "grosorDos"):
+        grosor = 2
+    elif (grosor == "grosorTres"):
+        grosor = 3
+    elif (grosor == "grosorCuatro"):
+        grosor = 4
+    conn = sqlite3.connect("/home/TheJunger/mysite/database.db")
+    cursor = conn.cursor()
+    cursor.execute(f'INSERT INTO produccion (fecha, dueño, grosor, color, cantidad, fecha_real) VALUES (?, ?, ?, ?, ?, ?)', 
+                   (fecha, dueño, grosor, color, cantidad, fecha_real))
+    conn.commit()
+    conn.close()
+    return jsonify(message='Data created successfully'), 200
+
+@app.route("/api/remove-data-produccion", methods=["PUT"])
+@jwt_required()
+def delete_data_produccion():
+    id = request.json["produccionID"]
+    conn = sqlite3.connect('/home/TheJunger/mysite/database.db')
+    cursor = conn.cursor()
+    cursor.execute(f'DELETE FROM produccion WHERE prod_id = ?', (id,))
+    conn.commit()
+    conn.close()
+    return jsonify(message='Data remove successfully'), 200
+
+@app.route("/api/edit-data-produccion", methods=["PUT"])
+@jwt_required()
+def edit_data_produccion():
+    id = request.json["produccionID"]
+    fecha = request.json["fecha"]
+    dueño = request.json["dueño"]
+    grosor = request.json["grosor"]
+    color = request.json["color"]
+    cantidad = request.json["cantidad"]
+
+    if (grosor == "grosorUno"):
+        grosor = 1
+    elif (grosor == "grosorDos"):
+        grosor = 2
+    elif (grosor == "grosorTres"):
+        grosor = 3
+    elif (grosor == "grosorCuatro"):
+        grosor = 4
+
+    conn = sqlite3.connect("/home/TheJunger/mysite/database.db")
+    cursor = conn.cursor()
+    
+    cursor.execute(f'UPDATE produccion SET fecha = ?, dueño = ?, grosor = ?, color = ?, cantidad = ? WHERE prod_id = ?', 
+                   (fecha, dueño, grosor, color, cantidad, id))
+    conn.commit()
+    conn.close()
+    
+    return jsonify(message='Data created successfully'), 200
+
+def download_all_data_produccion():
+    return 'test'
 
 # Inicia el servidor
 if __name__ == "__main__":

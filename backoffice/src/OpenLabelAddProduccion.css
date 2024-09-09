@@ -1,0 +1,41 @@
+.labelProdAddCont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    border: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.formContProdAdd{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #222;
+    padding: 4vh 7vw;
+    border-radius: 1vh;
+}
+
+.cancelButtonProdLabel{
+    background-color: rgb(212, 75, 75, 0.4);
+}
+
+.buttonsBolsonesSaveLabel *{
+    font-weight: 500;
+    font-size: 2.5vh;
+    margin-top: 5vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+    padding: 1vh 3vh;
+    border: 1px solid #222;
+    user-select: none;
+    cursor: pointer;
+}
+
+.FCPD{
+    font-weight: bold;
+}

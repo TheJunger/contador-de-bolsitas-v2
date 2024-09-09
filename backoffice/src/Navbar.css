@@ -86,6 +86,15 @@
     display: none;
 }
 
+.barsIcon{
+    font-size: larger;
+    font-weight: bold;
+    border: 0.5px solid #222;
+    border-radius: 1vh;
+    padding: 1vh 4vh;
+    
+}
+
 @media (max-width: 680px){
 
     .navbardown{
